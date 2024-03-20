@@ -1,11 +1,11 @@
 import DashboardTemplate from "../../Components/Templates/DashboardTemplate.jsx";
-import DashboardScreen from "../Dashboard/DashboardScreen.jsx";
-import Form from "./Form.jsx";
+import PaymentList from "./PaymentList.jsx";
+
 
 function NotificationScreen() {
   return (  
-    <DashboardTemplate pageTitle={"Analytics"}>
-        <Form/>
+    <DashboardTemplate pageTitle={"Payments"}>
+        <PaymentList/>
     </DashboardTemplate>
   );
 }

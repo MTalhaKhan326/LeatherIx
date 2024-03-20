@@ -1,29 +1,37 @@
 import { createContext, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext({
   isLoggedIn: false,
   setIsLoggedIn: (val) => {},
   user: null,
   setUser: (val) => {},
-  login: () => {},
+  login: (token, user, redirectRoute = "/") => {},
   logout: () => {}
 })
 
 function AuthContextProvider({children}) {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const token = localStorage.getItem('auth.token')
+  const [isLoggedIn, setIsLoggedIn] = useState(token ? true : false)
   const [user, setUser] = useState(null)
+  const navigate = useNavigate()
+  console.log(location.state)
   const value = {
     isLoggedIn,
     setIsLoggedIn,
     user, 
     setUser,
-    login: (phone, password) => {
-      setUser({ phone: phone })
+    login: (token, user, redirectRoute = "/") => {
+      localStorage.setItem('auth.token', token)
+      setUser(user)
       setIsLoggedIn(true)
+      navigate(redirectRoute)
     },
     logout: () => {
       setUser(null)
       setIsLoggedIn(false)
+      localStorage.removeItem('auth.token')
+      navigate('/login')
     }
   }
   return (  

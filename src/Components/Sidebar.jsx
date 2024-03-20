@@ -12,8 +12,8 @@ function Sidebar() {
     <aside className="w-[20%] p-4 h-full fixed bg-white" >
       <div>
         <div className="px-4">
-          <img src={AppImages.onecallLogo} className="w-[50px]" />
-          <h1 className="font-medium text-xs">OneCall</h1>
+          {/* <img src={AppImages.onecallLogo} className="w-[50px]" /> */}
+          <h1 className="px-2 font-bold">LeatherIx</h1>
         </div>
         <div className="mt-10 h-[70%] overflow-y-auto">
           <div className="">
@@ -42,7 +42,7 @@ function Sidebar() {
           </div>
         </div>
       </div>
-      <div className="absolute left-0 bottom-0 w-full">
+      {/* <div className="absolute left-0 bottom-0 w-full">
         <ul className="px-4">
           <li
             className={("hover:bg-slate-50") + "  my-4 py-2 px-3 cursor-pointer rounded-lg"}
@@ -71,7 +71,7 @@ function Sidebar() {
             </div>
           </li>
         </ul>
-      </div>
+      </div> */}
     </aside>
   );
 }
