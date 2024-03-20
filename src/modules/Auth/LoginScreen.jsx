@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import TextInputField from "../../components/basic/TextInputField";
+import TextInputField from "../../Components/basic/TextInputField";
 import AppImages from "../../assets/images";
 import { Link, redirect, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
